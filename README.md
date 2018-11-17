@@ -20,6 +20,9 @@ http://www.xtronical.com/basics/displays/lcd-tft-colourcolor-display-128x128-pix
 
 Current features include:
 Full Gicar Fillbox Replacement (Autofill cirucit using PCB SSR and factory water level probe)
+
 Full PID Controller using PT100 RTD Probe and Adafruit MAX31865 Thermocouple Amplifier
+
 Electronic Brew Valve, Pump and Steam Valve Control (Currently via serial interface, buttons to come)
+
 
