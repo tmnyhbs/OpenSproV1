@@ -131,6 +131,14 @@ void setupSerialInterface()  {
         digitalWrite(STEAM, LOW);
         Serial.println("Steam Valve Dectivated");
       }
+       if (incomingByte == 'Q') {
+        targetTemp = 0;
+        Serial.println("SHUTDOWN INITIATED");
+        delay(2500);
+        digitalWrite(STEAM, HIGH);
+        delay(45000);
+        digitalWrite(STEAM, LOW);
+      }
       if (incomingByte == '?') {
         printHelp();
       }
