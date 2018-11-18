@@ -1,6 +1,6 @@
 /* PID Control Circuit with support for MAX31685 RTD Probe Amplifier
- * Adapted from:
- *PID control code
+   Adapted from:
+  PID control code
   December 2007
   Creative Commons Attribution-Noncommercial-Share Alike 3.0
 */
@@ -192,10 +192,6 @@ void setupTempSensor() {
   }
   Serial.println();
   delay(1000);
-}
-
-float getFreshTemp() {
-  return (max.temperature(RNOMINAL, RREF));
 }
 
 float getTemp() {

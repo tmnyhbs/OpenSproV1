@@ -1,13 +1,16 @@
 /* This is an update to the "Heater Control" function
- *  Developed by Tim Herzil with the original
- *  BBCC in 2007
- */
+    Developed by Tim Herzil with the original
+    BBCC in 2007
+*/
 
 float heatcycles; // the number of millis out of 1000 for the current heat amount (percent * 10)
-
 boolean heaterState = 0;
-
 unsigned long heatCurrentTime, heatLastTime;
+
+void setupHeater() {
+  pinMode(HEAT , OUTPUT);
+}
+
 
 void setTargetTemp(float t) {
   targetTemp = t;
