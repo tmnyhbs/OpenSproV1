@@ -28,7 +28,7 @@
 // Delays + Intervals
 #define AUTOFILL_DELAY 500
 #define PID_UPDATE_INTERVAL 20
-#define PREINF_DELAY 2500
+#define PREINF_DELAY 0
 
 // Simple extension to the EEPROM library
 #include <avr/EEPROM.h>

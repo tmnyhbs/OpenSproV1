@@ -15,7 +15,6 @@ void toggle_autofill(int state) {
   }
   if (state == 0) {
     if ((millis() - autofill_time) > AUTOFILL_DELAY) {
-      // Turn off pump before valve
       digitalWrite(AUTOFILL, HIGH); // High is off
       autofill_state = state;
     }
@@ -29,7 +28,7 @@ void toggle_autofill(int state) {
 void updateAutofill() {
   // Read Sensors
   boiler.check();
-  // If boiler water is low turn on pump
+  // If boiler water is low turn on autofill valve
   if (boiler.value == 0) {
     toggle_autofill(0);
   } else {

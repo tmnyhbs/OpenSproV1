@@ -22,9 +22,7 @@ void setupSerialInterface()  {
   Serial.println("Welcome to OpenSpro V1");
   Serial.println("If this is your initial run, please enter 'R' to Reset the EEPROM.");
   Serial.println("Enter '?' for a complete list of options.");
-  Serial.println("Temperature = "); 
-  Serial.println(max.temperature(RNOMINAL, RREF));
-  Serial.println("Boiler Status = "); Serial.println(autofill_state);
+  Serial.println("Temperature = "); Serial.println(max.temperature(RNOMINAL, RREF));
   }
   void printHelp() {
     Serial.println("Send these characters for control:");
@@ -127,6 +125,14 @@ void setupSerialInterface()  {
         delay(500);
         digitalWrite(STEAM, LOW);
       }
+       if (incomingByte == 'Z') {
+        digitalWrite(PUMP, HIGH);
+        Serial.println("PUMP Activated");
+      }
+      if (incomingByte == 'z') {
+        digitalWrite(PUMP, LOW);
+        Serial.println("PUMP Activated");
+      }
       if (incomingByte == 's') {
         digitalWrite(STEAM, LOW);
         Serial.println("Steam Valve Dectivated");
@@ -136,8 +142,21 @@ void setupSerialInterface()  {
         Serial.println("SHUTDOWN INITIATED");
         delay(2500);
         digitalWrite(STEAM, HIGH);
-        delay(45000);
+        delay(25000);
         digitalWrite(STEAM, LOW);
+        delay(5000);
+        digitalWrite(STEAM, HIGH);
+        delay(25000);
+        digitalWrite(STEAM, LOW);
+        delay(5000);
+        digitalWrite(STEAM, HIGH);
+        delay(25000);
+        digitalWrite(STEAM, LOW);
+        delay(5000);
+        digitalWrite(STEAM, HIGH);
+        delay(25000);
+        digitalWrite(STEAM, LOW);
+        Serial.println("SHUTDOWN COMPLETE");
       }
       if (incomingByte == '?') {
         printHelp();
