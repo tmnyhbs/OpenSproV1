@@ -26,7 +26,7 @@ void toggle_autofill(int state) {
 }
 
 void updateAutofill() {
-  // Read Sensors
+  // Read level sensor
   boiler.check();
   // If boiler water is low turn on autofill valve
   if (boiler.value == 0) {

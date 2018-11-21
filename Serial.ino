@@ -1,10 +1,6 @@
-//serialInterface
-// Tim Hirzel February 2008
-// This is a very basic serial interface for controlling the PID loop.
-// thanks to the Serial exampe code
-
-// All code released under
-// Creative Commons Attribution-Noncommercial-Share Alike 3.0
+/* Serial Code adapted from BBCC project by Tim Herzel
+ *  
+ */
 
 #define AUTO_PRINT_INTERVAL 200  // milliseconds
 #define MAX_DELTA  100

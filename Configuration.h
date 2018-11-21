@@ -1,7 +1,5 @@
 /*    Configuration
-
       Default configurations for Espresso Machine
-
 */
 
 #ifndef Configuration_h
@@ -22,8 +20,8 @@
 #define STEAM 2
 
 // Setup Button Pins
-#define BREWBUT A1
-#define STEAMBUT A2
+const uint8_t BREWBUT = A0;
+const uint8_t STEAMBUT = A2;
 
 // Delays + Intervals
 #define AUTOFILL_DELAY 500

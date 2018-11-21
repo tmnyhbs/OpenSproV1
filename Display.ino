@@ -1,10 +1,5 @@
 /* This is the code to control the display output
- *
  */
-
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Adafruit_ST7735.h> // Hardware-specific library
-#include <SPI.h>
 
 #define TFT_SCLK 13         // SPI clock
 #define TFT_MOSI 11         // SPI Data
@@ -17,7 +12,6 @@
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
 
 void setupDisplay() {
-  // put your setup code here, to run once:
   tft.initR(INITR_144GREENTAB);
   tft.setTextWrap(false);
   tft.fillScreen(ST7735_BLUE);
@@ -44,6 +38,6 @@ void updateDisplay() {
   tft.println();
   tft.setTextSize(4);
   tft.setCursor(0, 96);
-  tft.println("WHORE");
+  tft.println("TIMER");
 }
 

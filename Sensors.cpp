@@ -1,7 +1,5 @@
 /*    Sensors Class
-
       Sensor Manager class to clean up the main file
-
 */
 
 #include "Arduino.h"
