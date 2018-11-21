@@ -26,23 +26,26 @@ void setupControls() {
 void updateBrewControl()
 {
   newStateB = digitalRead(BREWBUT);
-  if( lastStateB != newStateB ) // state changed
+  if ( lastStateB != newStateB ) // state changed
   {
     delay( debounceTime );
     lastStateB = newStateB;
     // push on, push off
-    if( newStateB == switchOn && toggleStateB == false )
+    if ( newStateB == switchOn && toggleStateB == false )
     {
       toggleStateB = true;
+      digitalWrite(BREWLED, HIGH);
       digitalWrite(BREW, HIGH );
       delay(PREINF_DELAY);
       digitalWrite(PUMP, HIGH );
     }
-    else if( newStateB == switchOn && toggleStateB == true )
+    else if ( newStateB == switchOn && toggleStateB == true )
     {
       toggleStateB = false;
       digitalWrite(PUMP, LOW );
       digitalWrite(BREW, LOW );
+      digitalWrite(BREWLED, LOW);
+
     }
   }
 }
@@ -50,20 +53,22 @@ void updateBrewControl()
 void updateSteamControl()
 {
   newStateS = digitalRead(STEAMBUT);
-  if( lastStateS != newStateS ) // state changed
+  if ( lastStateS != newStateS ) // state changed
   {
     delay( debounceTime );
     lastStateS = newStateS;
     // push on, push off
-    if( newStateS == switchOn && toggleStateS == false )
+    if ( newStateS == switchOn && toggleStateS == false )
     {
       toggleStateS = true;
       digitalWrite(STEAM, HIGH );
+      digitalWrite(STEAMLED, HIGH);
     }
-    else if( newStateS == switchOn && toggleStateS == true )
+    else if ( newStateS == switchOn && toggleStateS == true )
     {
       toggleStateS = false;
       digitalWrite(STEAM, LOW );
+      digitalWrite(STEAMLED, LOW);
     }
   }
 }
