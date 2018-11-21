@@ -15,6 +15,10 @@ Code for TFT Display is adapted from:
 128×128 Colour LCD to Arduino by Xtronical
 http://www.xtronical.com/basics/displays/lcd-tft-colourcolor-display-128x128-pixelst7735-driver/lcd-tft-colourcolor-display-128x128-pixel-1-44inch-3-7cm-st7735-driver/
 
+Code for Momentary push buttons adapted from:
+Arduino forum member 6v6gt in post 'Momentary push button and loops'
+http://forum.arduino.cc/index.php?topic=375410.0
+
 ## Features
 
 Current features include:
