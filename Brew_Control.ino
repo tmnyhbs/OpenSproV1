@@ -4,6 +4,8 @@
 const uint32_t debounceTime = 5;  // 5 mSec, enough for most switches
 const bool switchOn  = false;     // using INPUT_PULLUP
 const bool switchOff = true;
+int timer = 0;
+secTimer shotTimer;
 
 //for brew
 bool lastStateB   = switchOff;
@@ -34,6 +36,7 @@ void updateBrewControl()
     if ( newStateB == switchOn && toggleStateB == false )
     {
       toggleStateB = true;
+      shotTimer.startTimer();
       digitalWrite(BREWLED, HIGH);
       digitalWrite(BREW, HIGH );
       delay(PREINF_DELAY);
@@ -45,6 +48,7 @@ void updateBrewControl()
       digitalWrite(PUMP, LOW );
       digitalWrite(BREW, LOW );
       digitalWrite(BREWLED, LOW);
+      shotTimer.stopTimer();
 
     }
   }
